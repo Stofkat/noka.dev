@@ -23,8 +23,8 @@ services:
   mongo:
     image: mongo
     environment:
-      MONGO_INITDB_ROOT_USERNAME: strapi
-      MONGO_INITDB_ROOT_PASSWORD: strapi
+      MONGO_INITDB_ROOT_USERNAME: []
+      MONGO_INITDB_ROOT_PASSWORD: []
     volumes:
       - ./data/db:/data/db
     ports:
