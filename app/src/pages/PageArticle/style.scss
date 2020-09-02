@@ -1,0 +1,40 @@
+@import "../../style/animations.scss";
+
+.page.page-article {
+  opacity: 0;
+  animation: fade-in ease-out 0.5s forwards;
+  .article-body {
+    iframe,
+    img,
+    video {
+      width: 100%;
+      animation: fade-in ease-out 1.5s forwards;
+    }
+    h2,
+    h3 {
+      margin-top: 3rem;
+    }
+    p {
+      font-size: 20px;
+    }
+  }
+  h1 {
+    font-size: 3.5rem;
+    line-height: 3.5rem;
+    @media screen and (max-width: 768px) {
+      font-size: 2rem;
+      line-height: 2rem;
+    }
+  }
+  .button-back {
+    display: block;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.9;
+    }
+    padding-top: 1rem;
+    .text-button-back {
+      margin-left: 0.5rem;
+    }
+  }
+}

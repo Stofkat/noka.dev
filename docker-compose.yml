@@ -1,0 +1,33 @@
+version: '3'
+services:
+  frontend:
+    build: ./app
+    command: /bin/sh -c "cd /usr/app && npm i && npm rebuild node-sass && npm run start"
+    stdin_open: true
+    volumes:
+      - ./app:/usr/app
+      - ./app/node_modules:/usr/app/node_modules
+    ports:
+      - "3000:3000"
+  strapi:
+    image: strapi/strapi
+    environment:
+      DATABASE_CLIENT: mongo
+      DATABASE_NAME: noka-cms
+      DATABASE_HOST: mongo
+      DATABASE_PORT: 27017
+    links:
+      - mongo:mongo
+    volumes:
+      - ./api:/srv/app
+    ports:
+      - '1337:1337'
+  mongo:
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: strapi
+      MONGO_INITDB_ROOT_PASSWORD: strapi
+    volumes:
+      - ./data/db:/data/db
+    ports:
+      - '27017:27017'

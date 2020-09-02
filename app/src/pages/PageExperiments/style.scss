@@ -1,0 +1,19 @@
+@import "../../style/variables.scss";
+@import "../../style/devices.scss";
+
+.page-experiments {
+  .header-divider {
+    margin-top: 3rem;
+    margin-bottom: -1rem;
+  }
+  .container-highlighted {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include mobile {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}

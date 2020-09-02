@@ -1,0 +1,15 @@
+{
+  "host": "https://cms.toffeeshare.com",
+  "port": "",
+  "production": true,
+  "proxy": {
+    "enabled": false
+  },
+  "cron": {
+    "enabled": false
+  },
+  "admin": {
+    "autoOpen": false,
+    "path": "/admin"
+  }
+}

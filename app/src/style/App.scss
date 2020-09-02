@@ -1,0 +1,149 @@
+@import "./variables.scss";
+@import "./fonts.scss";
+@import "./devices.scss";
+
+body {
+  background-color: $color-background;
+  color: $color-text;
+  font-weight: 300;
+  font-size: 20px;
+  font-family: "Roboto";
+  background: $color-background;
+  overflow-y: scroll;
+  margin: 0;
+}
+.App {
+  .page {
+    padding-top: 100px;
+    margin-bottom: 2rem;
+    font-weight: 300;
+    @include mobile {
+      padding-top: 50px;
+    }
+    .container-center {
+      max-width: 720px;
+      display: flex;
+      margin: 0 auto;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      @include mobile {
+        margin-left: 1rem;
+        margin-right: 1rem;
+      }
+    }
+    .container-small {
+      max-width: 720px;
+      margin-left: 1rem;
+      margin-right: 1rem;
+      @include tablet-up {
+        margin: 0 auto;
+      }
+    }
+    .spaced {
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .section-divider {
+      position: relative;
+    }
+  
+    .section-divider:before {
+      content: "";
+      width: 6.5rem;
+      height: 6.5rem;
+      background: #252525;
+      border-radius: 100%;
+      position: absolute;
+      top: -1.2rem;
+      left: calc(50% - 3.25rem);
+      color: rgba(#252525, 0.5);
+      line-height: 6rem;
+      text-indent: 1.75rem;
+      font-size: 3rem;
+      z-index: -1;
+    }
+    .container-highlighted {
+      display: grid;
+      width: 100%;
+      @include tablet {
+        width: 720px;
+      }
+      @include desktop {
+        width: 1024px;
+      }
+      grid-template-columns: repeat(3, 1fr);
+      @include tablet-down {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @include mobile {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+  
+    .lower-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width:100%;
+      background: #252525;
+      margin-top: 5rem;
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+      @include mobile {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+    }
+  }
+}
+
+a {
+  color: $color-text;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 200;
+}
+h1 {
+  font-size: 40px;
+  @include mobile {
+    font-size: 35px;
+  }
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+h2 {
+  font-size: 28px;
+  @include mobile {
+    font-size: 25px;
+  }
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+h3 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+h4 {
+  font-size: 23px;
+}
+p {
+  font-size: 16px;
+  font-weight: 200;
+  &.introduction {
+    font-size: 23px;
+  }
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-link {
+  color: #61dafb;
+}

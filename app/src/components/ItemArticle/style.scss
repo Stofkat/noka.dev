@@ -1,0 +1,70 @@
+@import "../../style/animations.scss";
+
+.item-article {
+  opacity: 0;
+  animation: fade-in ease-out 0.5s forwards;
+  margin-bottom: 3rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  display: flex;
+  flex-direction: column;
+
+  a {
+    text-decoration: none;
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+
+  cursor: pointer;
+  .image-preview {
+    height: auto;
+    object-fit: cover;
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border-radius: 5px;
+  }
+  h3 {
+    margin-bottom: 0;
+    display: inline-block;
+  }
+  .icon-next {
+    margin-left: 0.25rem;
+    width: 1.5rem;
+    height: 1rem;
+    margin-bottom: -0.2rem;
+  }
+
+  .container-content {
+    margin-top: 0.5rem;
+    flex: 1;
+    display: flex;
+  }
+
+  .date {
+    color: #ddd;
+    font-size: 0.95rem;    
+    margin-right: 0.5rem;
+    img {
+      width: 1rem;
+      height: 1rem;
+      margin-right: 0.5rem;
+    }
+  }
+
+  .article-body {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    margin-left: 0.75rem;
+    p {
+      font-size: 16px;
+      margin: 0;
+    }
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}

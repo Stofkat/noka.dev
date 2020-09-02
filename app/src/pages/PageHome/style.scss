@@ -1,0 +1,16 @@
+@import "../../style/variables.scss";
+@import "../../style/devices.scss";
+@import "../../style/animations.scss";
+.page-home {
+  .header-divider {
+    margin-top: 3rem;
+    margin-bottom: -1rem;
+  }
+
+  .container-animated {
+    padding-top: 30vh;
+    padding-bottom: 30vh;
+    animation: from-bottom 1s ease-in-out 2s forwards;
+  }
+
+}

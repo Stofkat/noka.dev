@@ -1,0 +1,99 @@
+@import "../../style/variables.scss";
+@import "../../style/devices.scss";
+
+.App-header {
+  position: fixed;
+  height: 55px;
+  top: 0;
+  left: 0;
+  right: 0;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+  justify-content: space-between;
+  z-index: 999;
+  border-bottom: solid 1px $color-dark-grey;
+  background: $color-background;
+  h1 {
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #fff;
+    text-decoration: none;
+    padding-left: 15px;
+  }
+  .buttons {
+    z-index: 999;
+  }
+  .container-menu-items-desktop {
+    margin-right: 20px;
+  }
+  a {
+    text-decoration: none;
+    font-size: 20px;
+  }
+
+  .App-title {
+    z-index: 999;
+  }
+
+  .menu-item {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    transition: font-size 0.5s;
+    height: 55px;
+    @include tablet-down {
+      &:hover {
+        background-color: #222;
+      }
+    }
+    @include desktop {
+      &:hover {
+        border-top: solid #fff 3px;
+        padding-top: 10px;
+        opacity: 1;
+      }
+    }
+  }
+  .header-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .logo {
+      height: 32px;
+      width: 32px;
+    }
+  }
+  .menu-item {
+    padding: 15px;
+  }
+  .container-buttons {
+    margin-right: 1rem;
+    z-index: 999;
+  }
+}
+
+.sidebar {
+  padding-top: 4rem;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: calc(100vw - 55px);
+  background-color: #444;
+  display: flex;
+  align-content: flex-start;
+  flex-direction: column;
+  transition: right 0.5s ease-in-out;
+  box-shadow: -2px 0px 15px #000;
+  .menu-item {
+    height: 30px;
+  }
+  &.sidebar-opened {
+    right: 0;
+  }
+  &.sidebar-closed {
+    right: -100vw;
+  }
+}

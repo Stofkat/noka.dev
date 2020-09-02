@@ -1,0 +1,15 @@
+@import "../../style/devices.scss";
+
+.page-blog {
+  .container-blog {
+    margin-top: 5rem;
+    max-width: 720px;
+    @include mobile {
+      margin-top: 3rem;
+    }
+    margin-left: -1rem;
+    margin-right: -1rem;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

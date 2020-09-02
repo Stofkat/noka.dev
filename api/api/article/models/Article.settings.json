@@ -1,0 +1,52 @@
+{
+  "connection": "default",
+  "collectionName": "article",
+  "info": {
+    "name": "article",
+    "description": ""
+  },
+  "options": {
+    "timestamps": [
+      "createdAt",
+      "updatedAt"
+    ]
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "body": {
+      "type": "richtext"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
+    },
+    "publishDate": {
+      "type": "date"
+    },
+    "summary": {
+      "type": "richtext"
+    },
+    "type": {
+      "enum": [
+        "article",
+        "product",
+        "experiment"
+      ],
+      "type": "enumeration"
+    },
+    "link": {
+      "type": "string"
+    },
+    "imageTeaser": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
+    },
+    "highlighted": {
+      "type": "boolean"
+    }
+  }
+}

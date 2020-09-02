@@ -1,0 +1,36 @@
+{
+  "name": "toffee-cms",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A Strapi application",
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi",
+    "deploy": "npm run build && mv node_modules ../ && scp -r ./* cms.toffeeshare.com:/var/www/cms.toffeeshare.com/public_html/. && mv ../node_modules ./"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "strapi": "3.0.0-beta.17.4",
+    "strapi-admin": "3.0.0-beta.17.4",
+    "strapi-utils": "3.0.0-beta.17.4",
+    "strapi-plugin-content-type-builder": "3.0.0-beta.17.4",
+    "strapi-plugin-content-manager": "3.0.0-beta.17.4",
+    "strapi-plugin-users-permissions": "3.0.0-beta.17.4",
+    "strapi-plugin-email": "3.0.0-beta.17.4",
+    "strapi-plugin-upload": "3.0.0-beta.17.4",
+    "strapi-hook-mongoose": "3.0.0-beta.17.4"
+  },
+  "author": {
+    "name": "A Strapi developer"
+  },
+  "strapi": {
+    "uuid": "3334fe57-eca0-48dc-85fb-9a7ee910cd58"
+  },
+  "engines": {
+    "node": ">=10.0.0",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}
