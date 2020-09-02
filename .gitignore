@@ -12,6 +12,7 @@ api/node_modules
 # production
 app/build
 api/build
+api/config/environments/production
 data
 
 # misc
