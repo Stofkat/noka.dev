@@ -29,10 +29,11 @@
   .button-back {
     display: block;
     cursor: pointer;
+    padding-top: 1rem;
+    font-family: "WhiteRabbit";
     &:hover {
       opacity: 0.9;
     }
-    padding-top: 1rem;
     .text-button-back {
       margin-left: 0.5rem;
     }

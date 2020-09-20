@@ -1,4 +1,5 @@
-@import "../../style/animations.scss";
+@import "../../style/main.scss";
+
 .article-fade-in {
   position: relative;
   animation: fade-in ease-out 0.5s forwards;
@@ -24,9 +25,11 @@
   flex-direction: column;
   cursor: pointer;
   text-decoration: none;
-
+  @include mobile {
+    margin-bottom: 1rem;
+  }
   .container-text {
-    background-color: #4a7023;
+    background-color: $color-secondary;
     text-align: center;
     min-height: 50px;
     color: white;

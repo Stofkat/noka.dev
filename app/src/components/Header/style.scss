@@ -13,14 +13,15 @@
   padding-left: 1rem;
   justify-content: space-between;
   z-index: 999;
-  border-bottom: solid 1px $color-dark-grey;
+  border-bottom: solid 2px #444;
   background: $color-background;
   h1 {
-    font-size: 15px;
+    font-size: 18px;
     text-transform: uppercase;
     color: #fff;
     text-decoration: none;
     padding-left: 15px;
+    font-family: "WhiteRabbit";
   }
   .buttons {
     z-index: 999;
@@ -43,7 +44,11 @@
     font-size: 20px;
     transition: font-size 0.5s;
     height: 55px;
+    font-family: "WhiteRabbit";
     @include tablet-down {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       &:hover {
         background-color: #222;
       }
@@ -51,7 +56,6 @@
     @include desktop {
       &:hover {
         border-top: solid #fff 3px;
-        padding-top: 10px;
         opacity: 1;
       }
     }
@@ -61,8 +65,8 @@
     justify-content: center;
     align-items: center;
     .logo {
-      height: 32px;
-      width: 32px;
+      height: 20px;
+      width: 20px;
     }
   }
   .menu-item {

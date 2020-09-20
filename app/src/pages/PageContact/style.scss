@@ -1,45 +1,37 @@
-@import "../../style/devices.scss";
+@import "../../style/main.scss";
 
 .page-contact {
   .container-form {
     display: flex;
     flex-direction: column;
-    .container-cols {
-      display: flex;
-      flex: 1;
-      margin-left: -0.5rem;
-      margin-right: -0.5rem;
-      margin-bottom: 1rem;
-      @include mobile {
-        flex-direction: column;
-      }
-    }
-    .col {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      margin-left: 0.5rem;
-      margin-right: 0.5rem;
+    width: 600px;
+    @include mobile {
+      width: 100%;
     }
     label {
       font-size: 16px;
       padding-top: 1rem;
       padding-bottom: 0.5rem;
+      font-family: "WhiteRabbit";
     }
     textarea,
     input {
       flex: 1;
       border: unset;
-      border-radius: 5px;
+      border-bottom: solid 2px $color-primary;
       font-size: 16px;
       padding: 0.5rem;
       min-height: 30px;
-      background-color: #333;
-      color: white;
+      background-color: unset;
+      color: $color-primary;
     }
     textarea {
       min-height: 100px;
       margin-bottom: 1rem;
     }
+  }
+  .message-sent {
+    opacity: 0;
+    animation: fade-in 0.5s forwards;
   }
 }

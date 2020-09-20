@@ -1,0 +1,33 @@
+version: '3'
+networks:
+   default:
+     external:
+       name: docker-net
+services:
+  apache:
+    image: 'bitnami/apache:latest'
+    ports:
+      - '8080:8080'
+    volumes:
+      - ./app:/app
+  strapi:
+    image: strapi/strapi
+    environment:
+      NODE_ENV: production
+      DATABASE_CLIENT: mongo
+      DATABASE_NAME: noka-cms
+      DATABASE_HOST: mongo
+      DATABASE_PORT: 27017
+    links:
+      - mongo:mongo
+    volumes:
+      - ./api:/srv/app
+    ports:
+      - '1337:1337'
+  mongo:
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: strapi
+      MONGO_INITDB_ROOT_PASSWORD: strapi
+    volumes:
+      - ./data/db:/data/db

@@ -5,11 +5,11 @@
       "connector": "strapi-hook-mongoose",
       "settings": {
         "database": "noka-cms",
-        "host": "127.0.0.1",
+        "host": "mongo",
         "srv": false,
         "port": 27017,
-        "username": "",
-        "password": ""
+        "username": "strapi",
+        "password": "strapi"
       },
       "options": {
         "ssl": "${process.env.DATABASE_SSL || false}",

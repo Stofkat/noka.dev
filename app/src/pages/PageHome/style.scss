@@ -2,6 +2,10 @@
 @import "../../style/devices.scss";
 @import "../../style/animations.scss";
 .page-home {
+  h1 {
+    font-family: "GoodTimes";
+  }
+  
   .header-divider {
     margin-top: 3rem;
     margin-bottom: -1rem;

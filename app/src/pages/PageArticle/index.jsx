@@ -1,11 +1,11 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import Link from 'react-router-dom/Link';
 import showdown from "showdown";
 import { withAppState } from '../../state/withAppState';
 import './style.scss';
 
 import Articles from '../../state/actions/Articles';
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 class PageArticle extends Component {
   constructor(props) {
@@ -23,7 +23,16 @@ class PageArticle extends Component {
   }
 
   render() {
-    const converter = new showdown.Converter();
+    showdown.extension('targetlink', function() {
+      return [{
+        type: 'html',
+        regex: /(<a [^>]+?)(>.*<\/a>)/g,
+        replace: '$1 target="_blank" rel="noreferrer"$2'
+      }];
+    });
+    const converter = new showdown.Converter({
+      extensions: ['targetlink']
+    });
     const { articles } = this.props;
     const { currentArticle } = articles;
     const article = (articles.all && currentArticle) ?
@@ -38,8 +47,8 @@ class PageArticle extends Component {
                 className="button-back"
                 onClick={() => { this.props.history.goBack() }}
               >
-                <FontAwesomeIcon size="1x" icon={faArrowLeft} />
-                <span className="text-button-back">Back to index</span>
+                <FontAwesomeIcon size="1x" icon={faChevronLeft} />
+                <span className="text-button-back">Go back</span>
               </span>
               <h1>{article.title}</h1>
               {article.date &&

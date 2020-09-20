@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './style/App.scss';
 import Header from './components/Header';
@@ -24,6 +23,9 @@ function App() {
               <Route path="/articles/*" component={PageArticle}/>
             </Switch>
           </div>
+          {/* <footer>
+            Copyright 2020 - Noka Development
+          </footer> */}
         </div>
       </Router>
       {/* <Notifications /> */}

@@ -45,16 +45,16 @@ class Header extends Component {
   }
 
   handleScroll() {
-    if (window.scrollY > 100 && window.scrollY > this.lastScrollY) {
-      this.headerRef.style.top = '-55px';
-    } else if (window.scrollY < this.lastScrollY) {
-      this.headerRef.style.top = '0';
-    }
+    // if (window.scrollY > 100 && window.scrollY > this.lastScrollY) {
+    //   this.headerRef.style.top = '-55px';
+    // } else if (window.scrollY < this.lastScrollY) {
+    //   this.headerRef.style.top = '0';
+    // }
 
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-      this.headerRef.style.top = '0';
-    }
-    this.lastScrollY = window.scrollY;
+    // if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+    //   this.headerRef.style.top = '0';
+    // }
+    // this.lastScrollY = window.scrollY;
   }
 
   closeMenu() {
@@ -101,8 +101,8 @@ class Header extends Component {
         <Link
           onClick={() => this.closeMenu()}
           className="menu-item"
-          to="/experiments">
-          Experiments
+          to="/">
+          Home
         </Link>
         <Link
           onClick={() => this.closeMenu()}

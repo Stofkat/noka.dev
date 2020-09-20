@@ -1,6 +1,5 @@
-@import "./variables.scss";
-@import "./fonts.scss";
-@import "./devices.scss";
+@import "./main.scss";
+
 
 body {
   background-color: $color-background;
@@ -12,13 +11,30 @@ body {
   overflow-y: scroll;
   margin: 0;
 }
+.container-cols {
+  display: flex;
+  flex: 1;
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+  margin-bottom: 1rem;
+  @include mobile {
+    flex-direction: column;
+  }
+}
+.col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
 .App {
   .page {
     padding-top: 100px;
-    margin-bottom: 2rem;
     font-weight: 300;
     @include mobile {
-      padding-top: 50px;
+      padding-top: 75px;
     }
     .container-center {
       max-width: 720px;
@@ -48,21 +64,23 @@ body {
     .section-divider {
       position: relative;
     }
-  
+    code {
+      white-space: break-space;
+      font-size: 20px;
+      color: $color-green-lighter;
+    }
+
     .section-divider:before {
       content: "";
       width: 6.5rem;
-      height: 6.5rem;
-      background: #252525;
-      border-radius: 100%;
+      height: 40px;
+      background: $color-grey-darker;
       position: absolute;
-      top: -1.2rem;
+      top: -44px;
       left: calc(50% - 3.25rem);
-      color: rgba(#252525, 0.5);
-      line-height: 6rem;
-      text-indent: 1.75rem;
-      font-size: 3rem;
-      z-index: -1;
+      z-index: 1;
+      border: solid 2px white;
+      border-bottom: solid 2px $color-grey-darker;
     }
     .container-highlighted {
       display: grid;
@@ -81,16 +99,17 @@ body {
         grid-template-columns: repeat(1, 1fr);
       }
     }
-  
+
     .lower-section {
       display: flex;
       flex-direction: column;
       align-items: center;
-      max-width:100%;
-      background: #252525;
+      max-width: 100%;
+      background: $color-grey-darker;
       margin-top: 5rem;
       padding-top: 3rem;
-      padding-bottom: 3rem;
+      border-top: solid 2px white;
+      padding-bottom: 5rem;
       @include mobile {
         padding-left: 1rem;
         padding-right: 1rem;
@@ -100,16 +119,19 @@ body {
 }
 
 a {
-  color: $color-text;
+  color: $color-green-lighter;
+  font-weight: 400;
+
 }
 h1,
 h2,
 h3,
 h4 {
   font-weight: 200;
+  font-family: "WhiteRabbit";
 }
 h1 {
-  font-size: 40px;
+  font-size: 36px;
   @include mobile {
     font-size: 35px;
   }
@@ -135,6 +157,7 @@ p {
   font-size: 16px;
   font-weight: 200;
   &.introduction {
+    font-family: "WhiteRabbit";
     font-size: 23px;
   }
 }
@@ -144,6 +167,24 @@ p {
   pointer-events: none;
 }
 
-.App-link {
-  color: #61dafb;
+footer {
+  background-color: $color-grey-darker;
+  font-family: "WhiteRabbit";
+  padding: 2rem;
+  font-size: 14px;
+  text-align: center;
+}
+
+.logo-inline {
+  width: 20px;
+  height: 20px;
+  padding-left: 0.5rem;
+}
+
+// Fixes ugly focus borders on Chrome and Firefox
+textarea:focus, input:focus{
+  outline: none;
+}
+*:focus {
+outline: none;
 }

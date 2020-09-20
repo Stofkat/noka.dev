@@ -1,11 +1,13 @@
+@import "../../../style/main.scss";
+
 .button-main {
   padding: 1rem;
-  border-radius: 3px;
-  background: green;
+  background: $color-secondary;
   text-align: center;
   color: white;
   cursor: pointer;
+  font-family: "WhiteRabbit";
   &:hover {
-    background: lightgreen;
+    background: $color-green-lighter;
   }
 }

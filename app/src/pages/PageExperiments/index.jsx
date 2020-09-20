@@ -6,9 +6,11 @@ import { withAppState } from '../../state/withAppState';
 import HeaderTypewriter from '../../components/HeaderTypewriter';
 
 class PageExperiments extends Component {
+
   componentDidMount() {
     Articles.listCategory('experiments');
   }
+  
   render() {
 
     const { experiments } = this.props.articles;

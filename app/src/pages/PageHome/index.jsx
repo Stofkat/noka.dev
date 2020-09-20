@@ -21,14 +21,20 @@ class PageHome extends Component {
     return (
       <div className="page page-home">
         <div className={`container-center  ${isFirstView ? "container-animated" : ""}`}>
-          <HeaderTypewriter>A digital playground 🌱</HeaderTypewriter>
+          <HeaderTypewriter>A digital playground
+            <img
+              src={require('../../assets/img/logo.svg')}
+              className="logo-inline"
+              alt="logo"
+            />
+          </HeaderTypewriter>
           <h2 >Designing innovative digital products from the ground up</h2>
 
         </div>
         <div className="lower-section section-divider">
           <div className="container-center spaced">
             <p className="introduction">
-              At Noka Development we embrace the transition from experimenting with new technologies to  building creative solutions, encorporating them in our every day live.
+              At Noka Development we experiment with new technologies to build creative solutions for every day live.
             </p>
           </div>
           <div className="container-highlighted">
